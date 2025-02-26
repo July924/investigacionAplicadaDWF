@@ -5,7 +5,7 @@ public class Empleado {
     public String nombre;
     protected int id;
     public double salario;
-    protected String departamento;
+    public String departamento;
     protected boolean activo;
 
     public Empleado(String nombre, int id, double salario, String departamento) {

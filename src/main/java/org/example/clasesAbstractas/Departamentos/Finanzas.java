@@ -12,6 +12,14 @@ public class Finanzas extends Departamento implements Gestionable {
     @Override
     public void despedir(Empleado e) {}
 
+
+    public void realizarPago(Empleado e) {
+        if (e.isActivo()) {
+            procesarPago(e);
+        } else {
+            System.out.println("No se puede pagar a un empleado inactivo");
+        }
+    }
     @Override
     public void procesarPago(Empleado e) {
         if (e.isActivo()) {
@@ -28,6 +36,13 @@ public class Finanzas extends Departamento implements Gestionable {
 
     @Override
     public double calcularPresupuesto() {
-        return empleados.stream().mapToDouble(Empleado::getSalario).sum();
+        double presupuestoTotal = 0;
+
+        // Recorrer la lista de empleados
+        for (Empleado empleado : empleados) {
+            presupuestoTotal += empleado.getSalario();
+        }
+
+        return presupuestoTotal;
     }
 }

@@ -3,6 +3,8 @@ package org.example.clasesPrincipales;
 import org.example.clasesAbstractas.Departamentos.Finanzas;
 import org.example.clasesAbstractas.Departamentos.RecursosHumanos;
 
+import java.util.Collection;
+
 // Empresa
 public class Empresa {
     private RecursosHumanos rh;
@@ -20,4 +22,5 @@ public class Empresa {
     public Finanzas getFinanzas() {
         return finanzas;
     }
+
 }

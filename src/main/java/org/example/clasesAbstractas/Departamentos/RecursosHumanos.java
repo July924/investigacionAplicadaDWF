@@ -18,7 +18,7 @@ public class RecursosHumanos extends Departamento implements Gestionable {
     @Override
     public void contratar(Empleado e) {
         if (presupuesto >= e.getSalario()) {
-            System.out.println("Se contrató al empleado: "+ e.nombre);
+            System.out.println("Se contrató al empleado: "+ e.nombre+" en el departamento de: "+e.departamento);
             agregarEmpleado(e);
             presupuesto -= e.getSalario();
             finanzas.recibirNotificacion(e);
@@ -33,7 +33,7 @@ public class RecursosHumanos extends Departamento implements Gestionable {
             System.out.println("No se puede despedir a un gerente con menos de 3 desarrolladores");
             return;
         }
-        if (e.despedir()==false) {
+        if (!e.despedir()) {
                     System.out.println("Se ha despedido al empleado: " + e.nombre);
         }else{
             System.out.println("No se ha despedido al empleado: " + e.nombre);
